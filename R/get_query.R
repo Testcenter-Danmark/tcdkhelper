@@ -1,6 +1,6 @@
 #' Get query from database
 #'
-#' Execute an input SQL query and close the database connection after
+#' @description Execute an input SQL query and close the database connection after
 # 'collection of data
 #'
 #' @param query string
