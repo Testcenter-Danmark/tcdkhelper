@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-<https://img.shields.io/badge/status-aktiv-brightgreen>
+![](https://img.shields.io/badge/status-aktiv-brightgreen)
 <!-- badges: end -->
 
 Tcdkhelper er en samling af hjælpefunktioner til R, som gør det nemmere
@@ -33,5 +33,5 @@ data <- get_query("Select top (100)
           ,RTimestampPM
           from Plateflow_Biomek
           Order by RTimestampPM desc")
-#> Collected 100 rows in 0.56 seconds
+#> Collected 100 rows in 0.64 seconds
 ```
