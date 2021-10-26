@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # tcdkhelper
 
 <!-- badges: start -->
-https://img.shields.io/badge/status-aktiv-brightgreen
+![](https://img.shields.io/badge/status-aktiv-brightgreen)
 <!-- badges: end -->
 
 Tcdkhelper er en samling af hjælpefunktioner til R, som gør det nemmere at lave data science i Testcenter Danmark
