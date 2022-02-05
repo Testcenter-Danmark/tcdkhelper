@@ -34,7 +34,7 @@ devtools::install_github("Testcenter-Danmark/tcdkhelper")
 
 Dette er et simpelt eksempel på hvordan et dataudtræk foretages:
 
-```{r example}
+```{r example, eval = F}
 library(tcdkhelper)
   
 data <- get_query("Select top (100) 
@@ -43,4 +43,5 @@ data <- get_query("Select top (100)
           ,RTimestampPM
           from Plateflow_Biomek
           Order by RTimestampPM desc")
+#> Collected 100 rows in 0.64 seconds
 ```
