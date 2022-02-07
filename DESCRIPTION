@@ -11,9 +11,15 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
+    ggplot2,
+    grid,
     lubridate,
     magrittr,
     odbc,
-    tibble
+    tibble,
+    utils
 URL: https://github.com/Testcenter-Danmark/tcdkhelper
 BugReports: https://github.com/Testcenter-Danmark/tcdkhelper/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
