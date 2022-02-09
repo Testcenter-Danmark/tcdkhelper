@@ -17,18 +17,22 @@
 #' If none is given, defaults to the return value of Sys.timezone()
 #' @param timezone_out Timezone returned by query. Defaults to value of `timezone`
 #'
-#' @return data frame
+#' @return The query result as a [tibble][tibble::tibble()].
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
 #'
 #' @export
 #' @examples
-#' get_query("SELECT TOP (10)
-#' MatrixPlateBC,
-#' DWPlateBC,
-#' RTimestampPM
+#' get_query(
+#' "SELECT TOP (10)
+#'   MatrixPlateBC,
+#'   DWPlateBC,
+#'   RTimestampPM
 #' FROM PlateFlow_Biomek
-#' ORDER BY RTimestampPM DESC")
+#'
+#' ORDER BY RTimestampPM DESC"
+#' )
+
 
 get_query <- function(query,
                       driver = "ODBC Driver 17 for SQL Server",
