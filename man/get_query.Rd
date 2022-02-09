@@ -36,7 +36,7 @@ If none is given, defaults to the return value of Sys.timezone()}
 \item{timezone_out}{Timezone returned by query. Defaults to value of \code{timezone}}
 }
 \value{
-data frame
+The query result as a \link[tibble:tibble]{tibble}.
 }
 \description{
 Execute an input SQL query and close the database connection
@@ -45,10 +45,13 @@ When given with no argument except query, the TCDK production database
 is queried.
 }
 \examples{
-get_query("SELECT TOP (10)
-MatrixPlateBC,
-DWPlateBC,
-RTimestampPM
+get_query(
+"SELECT TOP (10)
+  MatrixPlateBC,
+  DWPlateBC,
+  RTimestampPM
 FROM PlateFlow_Biomek
-ORDER BY RTimestampPM DESC")
+
+ORDER BY RTimestampPM DESC"
+)
 }
