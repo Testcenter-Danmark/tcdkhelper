@@ -36,7 +36,7 @@
 
 get_query <- function(query,
                       driver = "ODBC Driver 17 for SQL Server",
-                      server = "s-dnbdb02-p",
+                      server = getOption("tcdkhelper.dbaddr"),
                       database = "dnb_covid19",
                       trusted_connection = "Yes",
                       encoding = "latin1",

@@ -30,7 +30,7 @@ save_kpi <-
            portrait = F,
            debug = F) {
 
-    dir_path <- file.path("\\\\s-inf-fil-05-p.ssi.ad",
+    dir_path <- file.path(getOption("tcdkhelper.sdrive"),
                           "svl",
                           "TestCenter",
                           "KPI",
