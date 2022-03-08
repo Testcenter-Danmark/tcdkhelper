@@ -82,3 +82,56 @@
 #' }
 #'
 "rtimestamp_levels"
+
+#' @keywords internal
+#' Update configuration files on package load
+
+.onLoad <- function(libname, pkgname) {
+  # Load configuration from local library, COVID19_SHARED folder or manually
+  local_path <- file.path(.libPaths()[1], pkgname, "tcdkhelper.json")
+  c19shared_path <-
+    file.path("S:", "COVID19_SHARED", "tcdkhelper", "tcdkhelper.json")
+
+  if (file.exists(local_path)) {
+    cfg_path <- local_path
+  } else if (file.exists(c19shared_path)) {
+    cfg_path <- c19shared_path
+  } else {
+    # If still not found, prompt user
+    prompt <- utils::winDialog(type = "okcancel",
+                        "tcdkhelper.json kunne ikke findes.\nVil du finde den manuelt?")
+    if (prompt == "OK") {
+      cfg_path <- file.choose()
+    } else {
+      stop("Kunne ikke finde konfigurationsfil!")
+    }
+  }
+
+  # Read config
+  cfgs <- jsonlite::fromJSON(cfg_path)
+  op.tcdkhelper <- list(
+    tcdkhelper.dbaddr = cfgs$dbaddr,
+    tcdkhelper.sdrive = cfgs$sdrive
+  )
+
+  version_old <- ifelse(!is.null(cfgs$version), cfgs$version, "0.0.0")
+  version_cur <- utils::packageVersion(pkgname)
+
+  if (is.na(version_old) | version_old < version_cur & !is.na(local_path)) {
+    packageStartupMessage("Opdaterer konfiguration til version ", version_cur)
+    cfgs$version <- as.character(version_cur)
+    jsonlite::write_json(x = cfgs,
+                         path = local_path,
+                         auto_unbox = T,
+                         pretty = T)
+  }
+
+  # Update missing options
+  {
+    op <- options()
+    toset <- !(names(op.tcdkhelper) %in% names(op))
+    if (any(toset[toset])) options(op.tcdkhelper[toset])
+  }
+
+  invisible()
+}
