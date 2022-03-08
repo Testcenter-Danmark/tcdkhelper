@@ -13,18 +13,11 @@ at lave data science i Testcenter Danmark
 
 ## Installation
 
-Pakken kan installeres fra [GitHub](https://github.com/). Da
-repository’et er privat, kræver dette en personlig adgangstoken (PAT),
-som kan genereres således:
-<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
-
-Det anbefales at have en udløbsdato på denne.
-
-Derefter kan pakken installeres i R med disse kommandoer:
+Pakken kan installeres fra [GitHub](https://github.com/) således:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Testcenter-Danmark/tcdkhelper", auth_token = "{-din-personlige-adgangstoken-}")
+devtools::install_github("Testcenter-Danmark/tcdkhelper")
 ```
 
 ## Funktioner
