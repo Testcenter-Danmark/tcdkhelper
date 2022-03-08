@@ -34,7 +34,7 @@ previous timestamp.
 It is (potentially) important to note that the column \code{Level} is
 \emph{not} a factor.
 This is due to how joins work in \code{\link[dplyr:mutate-joins]{dplyr}}; joining a
-(e.g. \code{chr}) vector with a \code{factor} coerces the matching column to a vector
+(e.g. \code{chr}) vector with a \code{factor} removes levels from the resulting column
 despite the join method used.
 
 To circumvent this, a target column (existing or new) can be made a factor by
