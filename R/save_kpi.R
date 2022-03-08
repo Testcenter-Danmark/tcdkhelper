@@ -46,12 +46,10 @@ save_kpi <-
       # Don't assign new path
     } else if (mode == "RStudio") {
       dir_path <- "KPI-PLOTS"
-      path <- file.path("KPI-PLOTS", path)
-    } else {
-      path <- file.path(dir_path, path)
     }
 
     dir.create(dir_path, recursive = T, showWarnings = F)
+    path <- file.path(dir_path, path)
 
     print_dims <- tibble(
       meas = c("height", "width"),
