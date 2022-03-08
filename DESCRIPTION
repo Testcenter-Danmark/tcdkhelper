@@ -22,6 +22,8 @@ Imports:
 URL: https://github.com/Testcenter-Danmark/tcdkhelper
 BugReports: https://github.com/Testcenter-Danmark/tcdkhelper/issues
 Suggests: 
+    tidyverse,
+    dplyr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 

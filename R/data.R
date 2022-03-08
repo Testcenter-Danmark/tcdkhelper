@@ -38,7 +38,7 @@
 #' @details It is (potentially) important to note that the column `Level` is
 #' *not* a factor.
 #' This is due to how joins work in [`dplyr`][dplyr::mutate-joins]; joining a
-#' (e.g. `chr`) vector with a `factor` coerces the matching column to a vector
+#' (e.g. `chr`) vector with a `factor` removes levels from the resulting column
 #' despite the join method used.
 #'
 #' To circumvent this, a target column (existing or new) can be made a factor by
