@@ -31,7 +31,6 @@ save_kpi <-
            debug = F) {
 
     dir_path <- file.path(getOption("tcdkhelper.sdrive"),
-                          "svl",
                           "TestCenter",
                           "KPI",
                           "KPI-PLOTS")
@@ -48,8 +47,8 @@ save_kpi <-
       dir_path <- "KPI-PLOTS"
     }
 
-    dir.create(dir_path, recursive = T, showWarnings = F)
-    path <- file.path(dir_path, path)
+    if (!force_path) path <- file.path(dir_path, path)
+    dir.create(dirname(path), recursive = T, showWarnings = F)
 
     print_dims <- tibble(
       meas = c("height", "width"),

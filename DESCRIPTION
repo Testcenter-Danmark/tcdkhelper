@@ -1,6 +1,6 @@
 Package: tcdkhelper
 Title: Helper Functions for TCDK
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     c(person("Marcus", "Grünewald", , "MMGR@ssi.dk", role = c("aut", "cre")),
     person("Emil", "Bjørn", , "EMBN@ssi.dk", role = "aut"))
